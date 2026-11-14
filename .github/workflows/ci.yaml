@@ -38,11 +38,12 @@ jobs:
     publish-image:
         needs: build-and-test
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        environment: production
         runs-on: ubuntu-latest
         permissions:
             contents: read
             packages: write
-
+        
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
