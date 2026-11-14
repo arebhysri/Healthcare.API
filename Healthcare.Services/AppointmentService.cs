@@ -19,9 +19,9 @@ namespace Healthcare.Services
         }
         public async Task<Appointment> CreateAppointmentAsync(Appointment appointment)
         {
-            if (appointment.AppoinmentDate < DateTime.Now)
-                throw new Exception("Appointment date cannot be in the past");
-            appointment.Id = 0;
+            //if (appointment.AppoinmentDate < DateTime.Now)
+            //    throw new Exception("Appointment date cannot be in the past");
+            //appointment.Id = 0;
             await _repo.AddAppointmentAsync(appointment);
             return appointment;
         }
